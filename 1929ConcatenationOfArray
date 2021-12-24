@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> getConcatenation(vector<int>& nums) {
+        vector<int> ans;
+        ans.reserve(nums.size() * 2);
+        
+        int indexCount = 0;
+        for(int i = 0; i < nums.size() * 2; i++) {
+            ans.push_back(nums[indexCount]);
+            
+            indexCount++;
+            if(indexCount == nums.size()) {
+                indexCount = 0;
+            }
+        }
+        
+        return ans;
+    }
+};
